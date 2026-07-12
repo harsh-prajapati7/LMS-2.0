@@ -1,0 +1,81 @@
+.dashboard-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(15,23,42,.15);
+
+}
+
+.card-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.card-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    border-radius:18px;
+
+    font-size:26px;
+
+}
+
+.dashboard-card h2{
+
+    color:#0f172a;
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.dashboard-card p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+
+.growth{
+
+    color:#10b981;
+
+    font-weight:700;
+
+}

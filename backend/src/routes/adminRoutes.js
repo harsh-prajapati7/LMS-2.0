@@ -11,6 +11,12 @@ const {
   getAllEmployees,
   getEmployeeById,
   updateEmployee,
+  createCustomer,
+  getAllCustomers,
+  getCustomerById,
+  updateCustomer,
+  deactivateCustomer,
+  getCustomerLoanHistory,
 } = require("../controllers/adminController");
 
 // Dashboard
@@ -47,6 +53,48 @@ router.put(
   protect,
   authorize("admin"),
   updateEmployee
+);
+
+router.post(
+  "/customers",
+  protect,
+  authorize("admin"),
+  createCustomer
+);
+
+router.get(
+  "/customers",
+  protect,
+  authorize("admin"),
+  getAllCustomers
+);
+
+router.get(
+  "/customers/:id",
+  protect,
+  authorize("admin"),
+  getCustomerById
+);
+
+router.put(
+  "/customers/:id",
+  protect,
+  authorize("admin"),
+  updateCustomer
+);
+
+router.delete(
+  "/customers/:id",
+  protect,
+  authorize("admin"),
+  deactivateCustomer
+);
+
+router.get(
+  "/customers/:id/loans",
+  protect,
+  authorize("admin"),
+  getCustomerLoanHistory
 );
 
 module.exports = router;

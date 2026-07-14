@@ -6,11 +6,19 @@ const connectDB = require("./config/database");
 const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
-  await connectDB();
+  try {
+    await connectDB();
 
-  app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
-  });
+    app.listen(PORT, () => {
+      console.log("=================================");
+      console.log("✅ MongoDB Connected");
+      console.log(`🚀 LMS 2.0 Backend Started`);
+      console.log(`🌍 http://localhost:${PORT}`);
+      console.log("=================================");
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 startServer();

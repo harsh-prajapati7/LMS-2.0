@@ -6,18 +6,24 @@ const protect = require("../middleware/authMiddleware");
 const authorize = require("../middleware/roleMiddleware");
 
 const {
-  getDashboardStats,
-  createEmployee,
-  getAllEmployees,
-  getEmployeeById,
-  updateEmployee,
-  createCustomer,
-  getAllCustomers,
-  getCustomerById,
-  updateCustomer,
-  deactivateCustomer,
-  getCustomerLoanHistory,
-} = require("../controllers/adminController");
+    getDashboardStats,
+} = require("../controllers/dashboardController");
+
+const {
+    createEmployee,
+    getAllEmployees,  
+    getEmployeeById,
+    updateEmployee,
+} = require("../controllers/employeeController");
+
+const {
+    createCustomer,
+    getAllCustomers,
+    getCustomerById,
+    updateCustomer,
+    deactivateCustomer,
+    getCustomerLoanHistory,
+} = require("../controllers/customerController");
 
 // Dashboard
 router.get("/dashboard",

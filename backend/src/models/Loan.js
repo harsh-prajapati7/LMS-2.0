@@ -40,6 +40,7 @@ const loanSchema = new mongoose.Schema(
       type: String,
       enum: [
         "Pending",
+        "Assigned",
         "Approved",
         "Rejected",
         "Closed",
@@ -52,9 +53,32 @@ const loanSchema = new mongoose.Schema(
       default: "",
     },
 
+    rejectionReason: {
+      type: String,
+      default: "",
+    },
+
+    approvedAt: {
+      type: Date,
+    },
+
+    rejectedAt: {
+      type: Date,
+    },
+
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+    },
+
+    updatedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+
+    isActive: {
+      type: Boolean,
+      default: true,
     },
   },
   {

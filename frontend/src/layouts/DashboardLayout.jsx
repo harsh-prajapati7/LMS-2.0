@@ -19,8 +19,8 @@ export default function DashboardLayout({ children }) {
         className="animate-fade-in"
         sx={{
           flexGrow: 1,
-          px: { xs: 2, sm: 3, md: 4 },
-          py: { xs: 3, md: 4 },
+          px: { xs: 1.5, sm: 3, md: 4 },
+          py: { xs: 2, md: 4 },
         }}
       >
         {children}

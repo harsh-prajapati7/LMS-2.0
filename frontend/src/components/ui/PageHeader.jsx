@@ -50,11 +50,16 @@ export default function PageHeader({ title, subtitle, breadcrumbs = [], action }
         spacing={2}
       >
         <Box>
-          <Typography variant="h4" fontWeight={800} color="text.primary" sx={{ letterSpacing: "-0.02em" }}>
+          <Typography
+            variant="h4"
+            fontWeight={800}
+            color="text.primary"
+            sx={{ letterSpacing: "-0.02em", fontSize: { xs: "1.35rem", sm: "1.85rem", md: "2.125rem" } }}
+          >
             {title}
           </Typography>
           {subtitle && (
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}>
               {subtitle}
             </Typography>
           )}

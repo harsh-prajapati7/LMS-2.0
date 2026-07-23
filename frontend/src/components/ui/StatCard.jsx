@@ -47,7 +47,17 @@ export default function StatCard({
             <Typography variant="caption" color="text.secondary" fontWeight={700} textTransform="uppercase" letterSpacing={0.8}>
               {title}
             </Typography>
-            <Typography variant="h4" fontWeight={800} sx={{ mt: 0.75, mb: 0.5, color: "text.primary" }}>
+            <Typography
+              variant="h4"
+              fontWeight={800}
+              sx={{
+                mt: 0.75,
+                mb: 0.5,
+                color: "text.primary",
+                fontSize: { xs: "1.4rem", sm: "1.75rem", md: "2rem" },
+                letterSpacing: "-0.02em",
+              }}
+            >
               {value}
             </Typography>
           </Box>

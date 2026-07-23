@@ -6,65 +6,55 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import { Paper, Typography, Box } from "@mui/material";
 
-import { Paper, Typography } from "@mui/material";
-
-const data = [
-  { name: "Personal", value: 35 },
-  { name: "Home", value: 25 },
-  { name: "Business", value: 20 },
-  { name: "Vehicle", value: 20 },
+const defaultData = [
+  { name: "Approved", value: 45, color: "#10B981" },
+  { name: "Pending", value: 30, color: "#F59E0B" },
+  { name: "Rejected", value: 15, color: "#F43F5E" },
+  { name: "Assigned", value: 10, color: "#6366F1" },
 ];
 
-const COLORS = [
-  "#2563eb",
-  "#22c55e",
-  "#f59e0b",
-  "#ef4444",
-];
-
-function LoanDistribution() {
+export default function LoanDistribution({ data = defaultData }) {
   return (
-    <Paper
-      elevation={3}
-      sx={{
-        p: 3,
-        borderRadius: 4,
-        height: "100%",
-      }}
-    >
-      <Typography
-        variant="h6"
-        fontWeight="bold"
-        mb={2}
-      >
-        Loan Distribution
-      </Typography>
+    <Paper sx={{ p: 3.5, borderRadius: 5, height: "100%" }}>
+      <Box sx={{ mb: 2 }}>
+        <Typography variant="h6" fontWeight={800} color="text.primary">
+          Loan Portfolio Breakdown
+        </Typography>
+        <Typography variant="caption" color="text.secondary" fontWeight={500}>
+          Real-time application status distribution
+        </Typography>
+      </Box>
 
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={290}>
         <PieChart>
           <Pie
             data={data}
             cx="50%"
             cy="50%"
-            outerRadius={90}
+            innerRadius={65}
+            outerRadius={95}
+            paddingAngle={6}
             dataKey="value"
-            label
           >
             {data.map((entry, index) => (
-              <Cell
-                key={index}
-                fill={COLORS[index % COLORS.length]}
-              />
+              <Cell key={`cell-${index}`} fill={entry.color} stroke="transparent" />
             ))}
           </Pie>
-
-          <Tooltip />
-          <Legend />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: "rgba(17, 24, 39, 0.95)",
+              borderRadius: "14px",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              boxShadow: "0 14px 35px rgba(0, 0, 0, 0.5)",
+              color: "#FFF",
+              backdropFilter: "blur(12px)",
+            }}
+          />
+          <Legend verticalAlign="bottom" height={36} iconType="circle" />
         </PieChart>
       </ResponsiveContainer>
     </Paper>
   );
 }
-
-export default LoanDistribution;

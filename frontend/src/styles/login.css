@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #eef4fb;
+}
+
+.login-page {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.login-left {
+    flex: 1;
+    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 55%, #42a5f5 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    position: relative;
+}
+
+.login-left::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 50%;
+    top: -120px;
+    right: -120px;
+}
+
+.login-left::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, .05);
+    border-radius: 50%;
+    bottom: -80px;
+    left: -60px;
+}
+
+.brand-title {
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.brand-subtitle {
+    margin-top: 25px;
+    font-size: 20px;
+    opacity: .92;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+.feature-box {
+    margin-top: 50px;
+}
+
+.feature-item {
+    margin-bottom: 16px;
+    font-size: 17px;
+}
+
+.login-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8fbff;
+}
+
+.login-card {
+    width: 430px;
+    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, .82);
+    border-radius: 22px;
+    padding: 45px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
+}
+
+.login-heading {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.login-text {
+    color: #666;
+    margin-top: 8px;
+    margin-bottom: 28px;
+}
+
+.security-box {
+    margin-top: 28px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #edf7ff;
+    color: #1565c0;
+    text-align: center;
+    font-weight: 600;
+}
+
+@media(max-width:900px) {
+
+    .login-page {
+        flex-direction: column;
+    }
+
+    .login-left {
+        padding: 50px;
+        text-align: center;
+    }
+
+    .login-card {
+        width: 90%;
+        margin: 40px auto;
+    }
+
+}

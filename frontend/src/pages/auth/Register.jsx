@@ -223,7 +223,7 @@ export default function Register() {
             width: "100%",
             maxWidth: 500,
             p: { xs: 3.5, sm: 5 },
-            borderRadius: 5,
+            borderRadius: "40px",
             border: "1px solid rgba(255, 255, 255, 0.1)",
             boxShadow: "0 20px 40px rgba(0, 0, 0, 0.5)",
           }}
